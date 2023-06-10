@@ -16,11 +16,16 @@ class TweetsController < ApplicationController
         tweet = Tweet.new(tweet_params)
         tweet.user = current_user
         if tweet.save
-            redirect_to tweet, notice: "Tweet succesful"
+            redirect_to tweet, notice: "Tweet created succesfully"
         else
             render :new
         end
+    end
 
+    def destroy
+        tweet = Tweet.find(params[:id])
+        tweet.destroy
+        redirect_to tweets_path, alert:"Tweet deleted succesfully"
     end
 
     private
