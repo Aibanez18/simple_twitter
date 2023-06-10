@@ -73,3 +73,8 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "devise"
+gem "simple_form"
+gem "rack-cors"
+gem "cancancan"
